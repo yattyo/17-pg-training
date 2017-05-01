@@ -120,6 +120,9 @@ textarea {
   margin: 0 5px;
 }
 
+.toot-image{
+  width: 210px;
+}
 
 .toot-container .contents {
   height: calc(100% - 47px);
