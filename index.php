@@ -10,7 +10,7 @@ $user_login_name = $_SESSION['user_login_name'];
 $database = getDatabase();
 
 $toots = $database->query("
-    SELECT toot.text,login_name,display_name,image_file_name
+    SELECT toot.text,login_name,display_name,image_file_name,icon_image
     FROM `toot`
     INNER JOIN `user` ON user.id = toot.user_id
     ORDER BY toot.created_at desc
@@ -29,14 +29,16 @@ $toots = $database->query("
         <div class="wrapper">
             <div class="container myself-container">
                 <div class="myself">
-                    <div class="user-icon"></div>
-                    <div class="user-name"></div>
+                    <img class="user-icon" src= "<?php echo displayIcon($_SESSION['user_icon_image']) ?>" width="30">
+                    <div class="user-name"><?php echo $_SESSION['user_display_name']; ?></div>
+                    <div class="user_id">@<?php echo $_SESSION['user_login_name']; ?></div>
                 </div>
                 <form enctype="multipart/form-data" method="post" action="/post_toot.php">
                     <textarea name="text" placeholder="今なにしてる？" required></textarea>
                     <input type="file" name="image">
                     <div class="toot-button-container">
                         <input type="submit" class="toot-button" value="トゥート!">
+                        <a href="/change_icon.php">アイコン変えるよ</a>
                     </div>
                 </form>
             </div>
@@ -47,11 +49,11 @@ $toots = $database->query("
 
                 <?php foreach($toots as $toot){ ?>
                     <li>
-                      <img src="img/masatodon.jpg" width="30">
+                      <img class="user-icon" src= "<?php echo displayIcon($toot['icon_image']) ?>" width="30">
                       <div class="iconyoko">
                         <div class="yasunoyoko">
                           <div><?php echo $toot["display_name"]; ?></div>
-                          <div class="user_id"><?php echo $toot["login_name"]; ?></div>
+                          <div class="user_id">@<?php echo $toot["login_name"]; ?></div>
                         </div>
                           <p><?php echo $toot["text"]; ?></p>
                             <?php if($toot["image_file_name"] != null ) { ?>

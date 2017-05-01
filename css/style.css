@@ -55,9 +55,6 @@ body {
 
 .myself .user-name {
   padding-left: 8px;
-  line-height: 20px;
-  font-size: 13px;
-  font-weight: bold;
 }
 
 input[type='file'] {
@@ -113,7 +110,7 @@ textarea {
 }
 
 .user_id{
-  color: #444B5D;
+  color: white;
 }
 
 .iconyoko{

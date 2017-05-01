@@ -20,5 +20,6 @@ if ($user === false) {
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['user_login_name'] = $user['login_name'];
     $_SESSION['user_display_name'] = $user['display_name'];
+    $_SESSION['user_icon_image'] = $user['icon_image'];
     header('Location: /');
 }
