@@ -91,7 +91,35 @@ textarea {
 
 .toot-container {
   background-color: #FFFFFF;
+  overflow: scroll;
 }
+
+.toot-container ul{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toot-container ul li{
+  border-bottom: 1px solid #444B5D;
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.yasunoyoko{
+  display: flex;
+  align-items: flex-start;
+}
+
+.user_id{
+  color: #444B5D;
+}
+
+.iconyoko{
+  margin: 0 5px;
+}
+
 
 .toot-container .contents {
   height: calc(100% - 47px);
@@ -126,4 +154,8 @@ textarea {
   line-height: 17px;
   font-size: 13px;
   color: #d9e1e8;
+}
+
+.toot-container{
+  background: #282c37;
 }
