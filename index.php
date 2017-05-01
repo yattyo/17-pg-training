@@ -29,7 +29,9 @@ $toots = $database->query("
         <div class="wrapper">
             <div class="container myself-container">
                 <div class="myself">
-                    <img class="user-icon" src= "<?php echo displayIcon($_SESSION['user_icon_image']) ?>" width="30">
+                    <a href="/change_profile.php">
+                      <img class="user-icon" src= "<?php echo displayIcon($_SESSION['user_icon_image']) ?>" width="30">
+                    </a>
                     <div class="user-name"><?php echo $_SESSION['user_display_name']; ?></div>
                     <div class="user_id">@<?php echo $_SESSION['user_login_name']; ?></div>
                 </div>
