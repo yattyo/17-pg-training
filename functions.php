@@ -21,3 +21,11 @@ function redirectToLoginPageIfNotLoggedIn() {
         exit;
     }
 }
+
+function displayIcon($icon_image) {
+  if($icon_image != null ) {
+    return "/uploaded_icon/" . $icon_image;
+  }else{
+    return "/img/masatodon.jpg";
+  }
+}
