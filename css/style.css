@@ -116,19 +116,16 @@ textarea {
   border-bottom: 1px solid #444B5D;
   padding: 10px 20px;
   display: flex;
-  align-items: flex-start;
+
 }
 
-.yasunoyoko{
-  display: flex;
-  align-items: flex-start;
-}
+
 
 .user_id{
   color: white;
 }
 
-.iconyoko{
+.toot-content{
   margin: 0 5px;
 }
 
@@ -174,4 +171,17 @@ textarea {
 
 .toot-container{
   background: #282c37;
+}
+
+.buttons span{
+  vertical-align: 4px;
+}
+
+.buttons img{
+  width: 24px;
+  cursor: pointer;
+}
+
+.called_name{
+  background-color: #dc143c;
 }
